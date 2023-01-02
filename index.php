@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="progresso">Banco do Brasil</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/millenium.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/demo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" href="https://cdn.discordapp.com/attachments/779354167889887282/881434099053645834/unknown.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/377c250b1d.js" crossorigin="anonymous"></script>
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"></script>
+    
+    <script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+        });
+        
+    </script>
+</head>
+<body>
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel-header bg-dark-gradient">
+                    <div class="page-inner">
+                        <a class="navbar-brand"><strong>  &nbsp; </strong> <i class="fa fa-money"></i></a>
+                    </div>
+
+                    <div class="card card-space">
+                        <div class="card-header">
+                            <h4 class="card-title">Status: <span id="status_checker">Aguardando!</span> </h4>
+                            
+                        </div><br>
+
+                        <div style="background: #5c08a1;" class="progress">
+                            <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;"></div>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-9">
+                                    <div class="tab-content" id="v-pills-tabContent">
+                                        <div class="tab-pane fade active show" id="v-pills-home-icons" role="tabpanel" aria-labelledby="v-pills-home-tab-icons">
+                                            <div class="accordion accordion-secondary">
+                                                <div class="card" id="card-textarea">
+                                                    <div class="card-header" id="textarea" daria-expanded="true" role="button">
+                                                        <div class="span-icon">
+                                                            <div class="flaticon-box-1"></div>
+                                                        </div>
+
+                                                        <div class="span-title">
+                                                            Coloque aqui sua lista de <strong>GGs</strong>
+                                                        </div>
+                                                    </div>
+                                                    <textarea id="lista" name="lista" style="background-color: #202940;" class="form-control" rows="5"></textarea>
+
+                                                    
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header collapsed" id="headingTwo" 
+                                                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                                                    <div class="span-icon">
+                                                        <div class="far fa-grin"></div>
+                                                    </div>
+                                                    <div class="span-title">
+                                                        Aprovadas
+                                                    </div>
+                                                    
+                                                    <div class="span-mode"></div>
+                                                </div>
+                                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                    <div style="background-color: #202940; text-align: left" class="card-body" id="aprovadas"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card">
+                                                <div class="card-header collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" role="button">
+                                                    <div class="span-icon">
+                                                        <div class="far fa-angry"></div>
+                                                    </div>
+                                                    <div class="span-title">
+                                                        Reprovadas
+                                                    </div>
+                                                    <div class="span-mode"></div>
+                                                </div>
+                                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                    <div style="background-color: #202940; text-align: left;" class="card-body" id="reprovadas"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                    <div class="tab-pane fade" id="v-pills-quality-icons" role="tabpanel" aria-labelledby="v-pills-quality-tab-icons">
+                                        <div class="accordion accordion-secondary">
+                                            <div class="card">
+                                                <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" role="button">
+                                                    <div class="span-icon">
+                                                        <div class="flaticon-box-1"></div>
+                                                    </div>
+                                                    <div class="span-title">
+                                                        
+                                                    </div>
+                                                    <div class="span-mode"></div>
+                                                </div>
+
+                                                <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordion" role="button">
+                                                    <div class="card-body" id="reprovadas"></div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <div id="profile" class="card card-profile">
+                                <div class="card-header" style="background-image: url('assets/img/espaco2.jpg'); border-bottom: 0px solid #ebecec!important; border-radius: 5px;">
+                                    <div class="profile-picture">
+                                        <div class="avatar avatar-xl">                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="user-profile text-center">
+                                        <div class="view-profile">
+                                            <button id="start" class="btn btn-success">
+                                                <span class="btn-label">
+                                                    <i class="fa fa-check"></i>
+                                                </span>
+                                                Iniciar
+                                            </button>
+                            
+                                            <button id="stop" class="btn btn-danger">
+                                                <span class="btn-label">
+                                                    <i class="fa fa-close"></i>
+                                                </span>
+                                                Parar
+                                            </button>
+                            
+                                            <button onclick="LimparLista();" class="btn btn-warning">
+                                                <span class="btn-label">
+                                                    <i class="fa fa-exclamation-circle"></i>
+                                                </span>
+                                                Limpar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row user-stats text-center">
+                                        <div class="col">
+                                            <div class="number" id="aprovadas_cont">0</div>
+                                            <div style="color: white;" class="title"><i class="fas fa-rocket"></i> Aprovadas</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="number" id="reprovadas_cont">0</div>
+                                            <div style="color: white;" class="title"><i class="fas fa-poo"></i> Reprovadas</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="number" id="total">0</span></div>
+                                            <div style="color: white;" class="title"><i class="fas fa-hand-spock"></i> Total </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/checker.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/millenium.min.js"></script> -->
+	<script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+	<script src="assets/js/plugin/moment/moment.min.js"></script>
+	<script src="assets/js/plugin/chart.js/chart.min.js"></script>
+	<script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+	<script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+	<script src="assets/js/plugin/datatables/datatables.min.js"></script>
+	<script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	<script src="assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+	<script src="assets/js/plugin/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+	<script src="assets/js/plugin/bootstrap-wizard/bootstrapwizard.js"></script>
+	<script src="assets/js/plugin/jquery.validate/jquery.validate.min.js"></script>
+	<script src="assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+	<script src="assets/js/plugin/select2/select2.full.min.js"></script>
+	<script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+</body>
+</html>

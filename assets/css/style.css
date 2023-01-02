@@ -1,0 +1,62 @@
+
+body {
+    background: #1a2035;
+    color: white;
+}
+
+.card-space{
+  background: #202940;
+  color: white;
+}
+.fa-heart {
+    color:  red;
+}
+.logo, .card-title, .navbar-brand {
+    color: white;
+}
+
+#lista{
+    background-color: #202940;
+    margin-top: 20px;
+    text-align: center;
+    outline: none;
+    resize: none;
+    color: white;
+    border-color: #373642;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.navbar-dark {
+    padding-bottom: 30px;
+}
+
+#headingThree, #headingTwo {
+    color: white;
+    background-color: #716aca; 
+    border-radius: 5px! important;
+}
+
+#textarea {
+    margin-bottom: -24px;
+    color: white;
+    background-color: #716aca; 
+    border-radius: 5px! important;
+    
+}
+
+#card-textarea {
+    margin-top: 5px;
+}
+
+#profile {
+    margin-top: 5px;
+    background: #202940;
+    color: white;
+}
+
+.fa-copy {
+    margin-left: 20px;
+}
